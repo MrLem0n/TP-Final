@@ -1,0 +1,210 @@
+[
+    {
+        "nombre": "Breaking Bad",
+        "descripcion": "Un profesor de química se convierte en fabricante de metanfetaminas.",
+        "tipo": "Serie",
+        "duracion": "45 min por episodio",
+        "categoria": "Drama, Crimen",
+        "popularidad": 7
+    },
+    {
+        "nombre": "Stranger Things",
+        "descripcion": "Un grupo de niños se enfrenta a fenómenos paranormales en su ciudad.",
+        "tipo": "Serie",
+        "duracion": "50 min por episodio",
+        "categoria": "Ciencia Ficción, Thriller",
+        "popularidad": 5
+    },
+    {
+        "nombre": "The Crown",
+        "descripcion": "Una mirada a la vida de la Reina Isabel II y los eventos que moldearon la segunda mitad del siglo XX.",
+        "tipo": "Serie",
+        "duracion": "58 min por episodio",
+        "categoria": "Drama, Historia",
+        "popularidad": 9
+    },
+    {
+        "nombre": "The Office",
+        "descripcion": "Un equipo de oficina lidia con situaciones cómicas y cotidianas.",
+        "tipo": "Serie",
+        "duracion": "22 min por episodio",
+        "categoria": "Comedia",
+        "popularidad": 3
+    },
+    {
+        "nombre": "Friends",
+        "descripcion": "Las aventuras de seis amigos en Nueva York mientras navegan la vida y el amor.",
+        "tipo": "Serie",
+        "duracion": "22 min por episodio",
+        "categoria": "Comedia, Romance",
+        "popularidad": 2
+    },
+    {
+        "nombre": "The Mandalorian",
+        "descripcion": "Un cazarrecompensas lucha por su vida en la galaxia después de encontrar a un niño misterioso.",
+        "tipo": "Serie",
+        "duracion": "35 min por episodio",
+        "categoria": "Ciencia Ficción, Aventura",
+        "popularidad": 10
+    },
+    {
+        "nombre": "House of Cards",
+        "descripcion": "Un ambicioso político y su esposa intentan manipular y controlar la política estadounidense.",
+        "tipo": "Serie",
+        "duracion": "55 min por episodio",
+        "categoria": "Drama, Thriller",
+        "popularidad": 1
+    },
+    {
+        "nombre": "Game of Thrones",
+        "descripcion": "Varias familias nobles luchan por el trono de hierro en un reino ficticio.",
+        "tipo": "Serie",
+        "duracion": "57 min por episodio",
+        "categoria": "Fantasía, Drama",
+        "popularidad": 2
+    },
+    {
+        "nombre": "Narcos",
+        "descripcion": "La vida y muerte de los narcotraficantes más conocidos de Colombia.",
+        "tipo": "Serie",
+        "duracion": "49 min por episodio",
+        "categoria": "Drama, Crimen",
+        "popularidad": 3
+    },
+    {
+        "nombre": "Sherlock",
+        "descripcion": "Adaptación moderna de Sherlock Holmes resolviendo crímenes en Londres.",
+        "tipo": "Serie",
+        "duracion": "90 min por episodio",
+        "categoria": "Crimen, Misterio",
+        "popularidad": 6
+    },
+    {
+        "nombre": "Inception",
+        "descripcion": "Un ladrón especializado en infiltrarse en los sueños es contratado para plantar una idea en la mente de un empresario.",
+        "tipo": "Película",
+        "duracion": "148 min",
+        "categoria": "Ciencia Ficción, Acción",
+        "popularidad": 8
+    },
+    {
+        "nombre": "Interstellar",
+        "descripcion": "Un grupo de astronautas viaja a través de un agujero de gusano para salvar a la humanidad.",
+        "tipo": "Película",
+        "duracion": "169 min",
+        "categoria": "Ciencia Ficción, Aventura",
+        "popularidad": 9
+    },
+    {
+        "nombre": "Forrest Gump",
+        "descripcion": "La historia de un hombre con un bajo coeficiente intelectual que logra cosas extraordinarias.",
+        "tipo": "Película",
+        "duracion": "142 min",
+        "categoria": "Drama, Romance",
+        "popularidad": 8
+    },
+    {
+        "nombre": "The Godfather",
+        "descripcion": "La crónica de la familia mafiosa Corleone en su ascenso al poder.",
+        "tipo": "Película",
+        "duracion": "175 min",
+        "categoria": "Crimen, Drama",
+        "popularidad": 10
+    },
+    {
+        "nombre": "The Shawshank Redemption",
+        "descripcion": "La historia de un hombre injustamente encarcelado que encuentra amistad y esperanza en prisión.",
+        "tipo": "Película",
+        "duracion": "142 min",
+        "categoria": "Drama",
+        "popularidad": 6
+    },
+    {
+        "nombre": "Pulp Fiction",
+        "descripcion": "Las historias entrelazadas de dos mafiosos, una pareja de asaltantes y un boxeador.",
+        "tipo": "Película",
+        "duracion": "154 min",
+        "categoria": "Crimen, Comedia",
+        "popularidad": 5
+    },
+    {
+        "nombre": "The Dark Knight",
+        "descripcion": "Batman debe enfrentarse a su mayor rival, el Joker, en esta épica historia.",
+        "tipo": "Película",
+        "duracion": "152 min",
+        "categoria": "Acción, Crimen",
+        "popularidad": 2
+    },
+    {
+        "nombre": "Fight Club",
+        "descripcion": "Un hombre común se une a un club de pelea secreto que le cambia la vida.",
+        "tipo": "Película",
+        "duracion": "139 min",
+        "categoria": "Drama, Thriller",
+        "popularidad": 4
+    },
+    {
+        "nombre": "The Matrix",
+        "descripcion": "Un hacker descubre la verdad sobre la realidad y se une a la lucha contra sus controladores.",
+        "tipo": "Película",
+        "duracion": "136 min",
+        "categoria": "Ciencia Ficción, Acción",
+        "popularidad": 5
+    },
+    {
+        "nombre": "Gladiator",
+        "descripcion": "Un general romano es traicionado y busca venganza como gladiador.",
+        "tipo": "Película",
+        "duracion": "155 min",
+        "categoria": "Acción, Aventura",
+        "popularidad": 10
+    },
+    {
+        "nombre": "The Big Bang Theory",
+        "descripcion": "Un grupo de amigos nerds navega sus vidas, amistades y relaciones.",
+        "tipo": "Serie",
+        "duracion": "22 min por episodio",
+        "categoria": "Comedia",
+        "popularidad": 3
+    },
+    {
+        "nombre": "Ozark",
+        "descripcion": "Un asesor financiero se ve envuelto en el lavado de dinero para un cartel de drogas.",
+        "tipo": "Serie",
+        "duracion": "60 min por episodio",
+        "categoria": "Drama, Crimen",
+        "popularidad": 8
+    },
+    {
+        "nombre": "True Detective",
+        "descripcion": "La historia de detectives investigando crímenes oscuros en diferentes temporadas.",
+        "tipo": "Serie",
+        "duracion": "60 min por episodio",
+        "categoria": "Crimen, Thriller",
+        "popularidad": 4
+    },
+    {
+        "nombre": "Seinfeld",
+        "descripcion": "Una comedia sobre nada en particular, protagonizada por un comediante y sus amigos.",
+        "tipo": "Serie",
+        "duracion": "23 min por episodio",
+        "categoria": "Comedia",
+        "popularidad": 9
+    },
+    {
+        "nombre": "Avatar",
+        "descripcion": "Un marine parapléjico es enviado al planeta Pandora y debe elegir entre los humanos y los nativos.",
+        "tipo": "Película",
+        "duracion": "162 min",
+        "categoria": "Ciencia Ficción, Aventura",
+        "popularidad": 4
+    },
+    {
+        "nombre": "Titanic",
+        "descripcion": "Un romance se desarrolla entre una mujer de la alta sociedad y un artista en el trágico viaje del Titanic.",
+        "tipo": "Película",
+        "duracion": "195 min",
+        "categoria": "Drama, Romance",
+        "popularidad": 8
+    }
+]
