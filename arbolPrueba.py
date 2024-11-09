@@ -44,7 +44,7 @@ def renderizar_contenido(contenidos):
                                         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
                                     }
                                 </style>
-                                <a href="https://youtu.be/Sr7ZUlsTwKc?si=BhswRidDv4EtlI_h">
+                                <a href="https://youtu.be/xvFZjo5PgG0">
                                     <img src="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2023/08/Jojos-Bizarre-Adventure-Quien-es-el-personaje-mas-poderoso-compressed.jpg?fit=1280%2C720&amp;ssl=1" class="custom-img" />
                                 </a>
                             ''')
