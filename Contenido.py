@@ -33,9 +33,7 @@ for item in data:
     )
     contenidos.append(contenido)
 
-for contenido in contenidos:
-    print(contenido)
-    print()
+
 
 
 

@@ -48,4 +48,17 @@ class ArbolGeneral:
             nodo_actual = nodos_por_visitar.pop(0)
             yield nodo_actual
             nodos_por_visitar.extend(nodo_actual.hijos)
+arbolito = ArbolGeneral()
 
+# Verifica si la raíz ya ha sido configurada
+if not arbolito.raiz and contenidos:
+    contenido_inicial = contenidos[0]
+    arbolito.raiz = NodoGeneral(contenido_inicial.nombre, contenido_inicial.tipo)
+
+for contenido in contenidos[1:]:  # Empieza desde el segundo contenido
+    if contenido.tipo == "Serie":
+        serie_nodo = NodoGeneral(contenido.nombre, contenido.tipo)
+        arbolito.raiz.agregar_hijo(serie_nodo)
+        print(f"Se agregó la serie: {contenido.nombre}")
+    else:
+        print(f"Tipo no es 'Serie' para: {contenido.nombre}")

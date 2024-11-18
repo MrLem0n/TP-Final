@@ -50,6 +50,7 @@ def renderizar_contenido(contenidos):
                             ''')
                 # ui.button('Ver', on_click=lambda c=contenido: agregar_wea(c.nombre))
                 ui.label(f"Popularidad: {contenidos.popularidad}" )
+                ui.label(f"Categorias: {contenidos.categoria}" )
 # recorrerer el arbol:
 
 def simular_for(raiz):
