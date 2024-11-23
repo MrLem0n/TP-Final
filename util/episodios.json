@@ -15,12 +15,12 @@
         {
             "episodio": 1,
             "titulo": "episodio1",
-            "url": " "
+            "url": "<iframe width='640' height='360' src='https://streamsito.net/video/tt4574334-1x01/' frameborder='0' allowfullscreen></iframe>" 
         },
         {
             "episodio": 2,
             "titulo": "episodio2",
-            "url": " "
+            "url": "<iframe class='no-you' width='640' height='360' data-src='https://streamsito.net/video/tt4574334-1x02/' frameborder='0' allowfullscreen='' src='https://streamsito.net/video/tt4574334-1x02/'></iframe>"
         }
     ],
     "The Crown": [

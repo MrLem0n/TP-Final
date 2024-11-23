@@ -1,4 +1,7 @@
-from usuario import Usuario
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'users')))
+from users import usuario
 import mysql.connector
 # Conectar a la base de datos
 conexion = mysql.connector.connect(
@@ -37,7 +40,7 @@ for fila in datos:
 
 usuarios=[]	
 for i in range(len(diccionario['id'])):
-    user = Usuario(
+    user = usuario.Usuario(
         id=diccionario['id'][i],
         nombre=diccionario['nombre'][i],
         email=diccionario['email'][i],
@@ -45,6 +48,6 @@ for i in range(len(diccionario['id'])):
         historial=[]
     )
     usuarios.append(user)
-for usuario in usuarios:
-    print(usuario)
+for user in usuarios:
+    print(user)
 
