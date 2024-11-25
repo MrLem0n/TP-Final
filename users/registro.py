@@ -18,8 +18,8 @@ def agregar_usuario():
         print("exito")
 
 
-with ui.column().classes('w-full justify-center items-center h-screen bg-gray-100'):
-    with ui.card():
+with ui.column().classes('w-full justify-center items-center h-screen bg-red-300'):
+    with ui.card().classes('w-1/2 h-1/2 bg-gray-100 justify-center items-center'):
         reg_nombre=ui.input(label="Ingrese su nombre", on_change=lambda e: print(e.value)).props("label-position='top'")
         reg_email=ui.input(label="Ingrese su email", on_change=lambda e: print(e.value)).props("label-position='top'")
         reg_contra=ui.input(label="Ingrese su contraseña", on_change=lambda e: print(e.value)).props("label-position='top'")

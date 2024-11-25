@@ -57,6 +57,6 @@ for serie_nombre, nodo_serie in series.items():
         with ui.card().style("width: 400px; height: 500px; margin: 10px;").classes("hover:shadow-xl transition-shadow"):
                 ui.label("Nombre: " + hijo.contenido.titulo)
                 ui.html(hijo.contenido.url)
-ui.run()
+
 
 

@@ -12,15 +12,16 @@ session_usuario = None
 @ui.page('/login')
 def logeando():
     login.loge()
+    
 @ui.page('/')
 def pagina_principal():
-
-    ui.page_title('Catalogo general')
-    with ui.row().classes('w-full items-center'):
-        ui.button('Series', on_click=lambda se='series': ui.navigate.to(f'/{se}'))
-        ui.button('Peliculas', on_click=lambda asd='peliculas': ui.navigate.to(f'/{asd}'))
-    with ui.row().classes('w-full items-center'):
-        simular_for(raiz)
+    
+        ui.page_title('Catalogo general')
+        with ui.row().classes('w-full items-center'):
+            ui.button('Series', on_click=lambda se='series': ui.navigate.to(f'/{se}'))
+            ui.button('Peliculas', on_click=lambda asd='peliculas': ui.navigate.to(f'/{asd}'))
+        with ui.row().classes('w-full items-center'):
+            simular_for(raiz)
 
 @ui.page('/peliculas')
 def pagina_peliculas():
