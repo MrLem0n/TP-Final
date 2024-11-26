@@ -2,26 +2,77 @@ from nicegui import ui
 from arbolPrueba import raiz,simular_for
 from listado import series  # Estructura del árbol de series y capítulos
 from Contenido import contenidos
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'users')))
-from users import login
-
-
+from db_users import usuarios
 session_usuario = None
-@ui.page('/login')
-def logeando():
-    login.loge()
-    
+background_image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxtj1-R7lh9ziN4YCJsV0gMPRVdg7gie9Mg&s"
+
 @ui.page('/')
-def pagina_principal():
+def logeando():
     
+    ui.add_head_html(f'''
+    <style>
+        body {{
+            background-image: url("{background_image_url}");
+            background-size: 50%;
+            background-attachment: fixed;
+            background-color: black;
+            color: white;
+        }}
+       
+    </style>
+''')
+
+
+    def validar_login():
+        for usuario_registrado in usuarios:
+            if usuario_registrado.nombre == nombre_input.value and usuario_registrado.contraseña == contraseña_input.value:
+                return usuario_registrado
+        return False
+
+    # Función para iniciar sesión
+    def login():
+        global session_usuario
+       
+        if validar_login():
+            
+            session_usuario= validar_login()
+            ui.notify(f"Bienvenido, {session_usuario.nombre}!", color='green')
+            ui.navigate.to('/catalogo')
+            print(session_usuario)
+        else:
+            ui.notify("Nombre de usuario o contraseña incorrectos", color='red')
+
+
+   
+    
+
+   
+
+    # Crear el formulario de inicio de sesión
+    with ui.column().classes('items-center justify-center w-full min-h-screen'):
+        with ui.row().classes('items-center justify-center w-full h-full'):
+              with ui.card().classes('items-center justify-center m-1/2 p-4 w-1/6 h-96 bg-green-100 shadow-lg  '):
+                ui.dark_mode()
+                ui.image('img/user-circ.svg').classes('w-1/3 h-1/3')
+                nombre_input = ui.input(label='Usuario')
+                contraseña_input = ui.input(label='Contraseña', password=True)
+                ui.button("Iniciar sesión", on_click=login)
+    
+@ui.page('/catalogo')
+def pagina_principal():
+    if session_usuario:
+        
         ui.page_title('Catalogo general')
         with ui.row().classes('w-full items-center'):
             ui.button('Series', on_click=lambda se='series': ui.navigate.to(f'/{se}'))
             ui.button('Peliculas', on_click=lambda asd='peliculas': ui.navigate.to(f'/{asd}'))
+            ui.label( f'Usuario actual: {session_usuario.nombre}')
+            
         with ui.row().classes('w-full items-center'):
             simular_for(raiz)
+    else:
+        ui.navigate.to('/')
+
 
 @ui.page('/peliculas')
 def pagina_peliculas():
