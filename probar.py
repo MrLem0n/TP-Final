@@ -15,8 +15,7 @@ def logeando():
             background-image: url("{background_image_url}");
             background-size: 50%;
             background-attachment: fixed;
-            background-color: black;
-            color: white;
+            
         }}
        
     </style>
@@ -60,13 +59,14 @@ def logeando():
     
 @ui.page('/catalogo')
 def pagina_principal():
+    #validar que el usuario haya iniciado sesion
     if session_usuario:
         
         ui.page_title('Catalogo general')
         with ui.row().classes('w-full items-center'):
             ui.button('Series', on_click=lambda se='series': ui.navigate.to(f'/{se}'))
             ui.button('Peliculas', on_click=lambda asd='peliculas': ui.navigate.to(f'/{asd}'))
-            ui.label( f'Usuario actual: {session_usuario.nombre}')
+            ui.label( f'Usuario actual: {session_usuario.nombre}').classes('ml-auto')
             
         with ui.row().classes('w-full items-center'):
             simular_for(raiz)
@@ -88,13 +88,20 @@ def pagina_peliculas():
 # Página de series
 @ui.page('/series')
 def pagina_series():
+    def agregar_usuario_historial(s):
+        if session_usuario:
+            ui.navigate.to(f'/{s}')
+            if s not in session_usuario.historial:
+                session_usuario.historial.append(s)
+            print(f"historial de {session_usuario.nombre}: {session_usuario.historial}")
+            
     ui.label("Catálogo de Series").classes("text-2xl font-bold mb-4")
     with ui.grid(columns=3).classes("gap-4"):
         for serie_nombre, nodo_serie in series.items():
             with ui.card().style("width: 300px; margin: 10px;").classes("hover:shadow-xl transition-shadow"):
                 ui.label(f"Serie: {serie_nombre}").classes("font-bold text-lg")
                 ui.label(f"Número de capítulos: {len(nodo_serie.hijos)}")
-                ui.button('Ver', on_click=lambda s=serie_nombre: ui.navigate.to(f'/{s}'))
+                ui.button('Ver', on_click=lambda s=serie_nombre:agregar_usuario_historial(s) )
 
 # Página de detalle de una serie
 @ui.page('/{nombre}')
