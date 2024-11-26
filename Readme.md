@@ -189,5 +189,5 @@ pip install nicegui
 ---
 
 ## **Créditos**
-- **Desarrollador**: [Tu Nombre]
+- **Desarrolladores**: [Lisandro Martin, Franco Lopez]
 - **Fecha**: Noviembre 2024
