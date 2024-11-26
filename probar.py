@@ -3,6 +3,7 @@ from arbolPrueba import raiz,simular_for
 from listado import series  # Estructura del árbol de series y capítulos
 from Contenido import contenidos
 from db_users import usuarios
+from grafo import grafo,generar_recomendaciones
 session_usuario = None
 background_image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxtj1-R7lh9ziN4YCJsV0gMPRVdg7gie9Mg&s"
 
@@ -66,6 +67,7 @@ def pagina_principal():
         with ui.row().classes('w-full items-center'):
             ui.button('Series', on_click=lambda se='series': ui.navigate.to(f'/{se}'))
             ui.button('Peliculas', on_click=lambda asd='peliculas': ui.navigate.to(f'/{asd}'))
+            ui.button('Recomendaciones', on_click=lambda username=session_usuario.nombre: ui.navigate.to(f'/{username}/recomendaciones')) 
             ui.label( f'Usuario actual: {session_usuario.nombre}').classes('ml-auto')
             
         with ui.row().classes('w-full items-center'):
@@ -120,6 +122,30 @@ def detalle_serie(nombre: str):
 
     if not serie_encontrada:
         ui.label(f"No se encontró la serie '{nombre}'.").classes("text-red-500")
-
-# Ejecutar NiceGUI
+@ui.page('/{username}/recomendaciones')
+def recomendaciones():
+    if session_usuario:
+        with ui.column():  # Crear un contenedor en columna para mostrar los títulos
+            ui.label(f"Recomendaciones para {session_usuario.nombre}:").classes("text-lg font-bold")
+            
+            recomendaciones = []  # Lista para almacenar las recomendaciones
+            
+            for wea in session_usuario.historial:
+                for contenido in contenidos:
+                    if wea == contenido.nombre:
+                        # Obtener las recomendaciones como lista
+                        recomendaciones.extend(generar_recomendaciones(contenido, grafo))
+            
+            # Evitar duplicados en las recomendaciones
+            recomendaciones = list(set(recomendaciones))
+            
+            if recomendaciones:
+                ui.label(f'Basados en tu historial, recomendamos:')
+                for titulo in recomendaciones:
+                    with ui.row():
+                        with ui.card().style("width: 300px; height: 300px; margin: 10px;").classes("hover:shadow-xl transition-shadow"):
+                            ui.label(titulo).classes("text-base font-medium")
+                    
+            else:
+                ui.label("No hay recomendaciones disponibles.").classes("text-base text-gray-600")
 ui.run()
