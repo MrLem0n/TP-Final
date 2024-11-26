@@ -5,8 +5,14 @@ from Contenido import contenidos
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'users')))
-from users import login
+import login
+from Top import mostrar_top
 
+
+
+@ui.page('/top')
+def mejor():
+    mostrar_top()
 
 session_usuario = None
 @ui.page('/login')
