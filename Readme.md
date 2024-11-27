@@ -20,10 +20,10 @@ El proyecto se organiza de la siguiente manera:
 ├── Contenido.py            # Modelo de datos para el contenido
 ├── Usuario.py              # Modelo de datos para el usuario
 ├── Grafo.py                # Funciones para gestionar el grafo de similitudes
-├── ColaPrioridades.py      # Implementación de una cola de prioridades para recomendaciones
+├── registro.py             # Funciones para el registro del usuario, enviado a la DB
 ├── main.py                 # Archivo principal donde se configuran las rutas y la interfaz
-├── templates/              # Archivos estáticos y estilos de NiceGUI (opcional)
-└── datos.json              # Archivo JSON con los datos del contenido
+├── util/              # Archivos estáticos y estilos de NiceGUI (opcional)
+└── contents.json              # Archivo JSON con los datos del contenido
 ```
 
 ---
@@ -142,10 +142,11 @@ def recomendaciones():
             for wea in session_usuario.historial:
                 ui.label(f"Porque viste '{wea}', recomendamos:")
                 recomendaciones = generar_recomendaciones(wea, grafo)
-                for titulo in recomendaciones:
-                    ui.card().tight().classes("my-2 p-4").with_content(
-                        ui.label(titulo).classes("text-base")
-                    )
+                ffor titulo in recomendaciones:
+                    with ui.row():
+                        with ui.card().style("width: 300px; height: 300px; margin: 10px;").classes("hover:shadow-xl transition-shadow"):
+                            ui.label(titulo).classes("text-base font-medium")
+                    
 ```
 
 ---
@@ -189,5 +190,5 @@ pip install nicegui
 ---
 
 ## **Créditos**
-- **Desarrolladores**: [Lisandro Martin, Franco Lopez]
+- **Desarrolladores**: Lisandro Martin, Franco Lopez
 - **Fecha**: Noviembre 2024

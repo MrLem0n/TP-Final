@@ -3,7 +3,7 @@ from arbolPrueba import raiz,simular_for
 from listado import series  # Estructura del árbol de series y capítulos
 from Contenido import contenidos
 from db_users import usuarios
-from grafo import grafo,generar_recomendaciones
+from grafo import grafo,generar_recomendaciones,dfs,bfs
 session_usuario = None
 background_image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxtj1-R7lh9ziN4YCJsV0gMPRVdg7gie9Mg&s"
 
@@ -140,6 +140,14 @@ def recomendaciones():
             recomendaciones = list(set(recomendaciones))
             
             if recomendaciones:
+                nodo_inicial = session_usuario.historial[0] if session_usuario.historial else None
+                if nodo_inicial:
+                    print("Recorrido DFS:")
+                    dfs(grafo, nodo_inicial)
+                    print("Recorrido BFS:")
+                    bfs(grafo, nodo_inicial)
+                else:
+                    print("El historial del usuario está vacío.")
                 ui.label(f'Basados en tu historial, recomendamos:')
                 for titulo in recomendaciones:
                     with ui.row():
@@ -148,4 +156,6 @@ def recomendaciones():
                     
             else:
                 ui.label("No hay recomendaciones disponibles.").classes("text-base text-gray-600")
+            
+            
 ui.run()

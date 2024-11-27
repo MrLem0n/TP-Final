@@ -1,18 +1,7 @@
 from Contenido import contenidos
-
+from collections import deque
 # Crear el grafo como un diccionario
 grafo={}
-
-
-
-
-                
-        
-
-
-
-
-
 # Construir el grafo basado en similitudes por categoría
 for i, item1 in enumerate(contenidos):
     for j, item2 in enumerate(contenidos):
@@ -34,4 +23,38 @@ def generar_recomendaciones(contenido_objeto, grafo):
    
     return recomendaciones
 
+def dfs(grafo, nodo, visitados=None):
+    if visitados is None:
+        visitados = set()
+    
+    # Marcar el nodo como visitado
+    visitados.add(nodo)
+    print(f"Visitando: {nodo}")
+
+    # Recorrer todos los vecinos no visitados
+    for vecino in grafo.get(nodo, []):
+        if vecino not in visitados:
+            dfs(grafo, vecino, visitados)
+    
+    return visitados
+
+
+
+def bfs(grafo, nodo):
+    visitados = set()
+    cola = deque([nodo])
+
+    while cola:
+        actual = cola.popleft()
+        if actual not in visitados:
+            # Marcar el nodo como visitado
+            visitados.add(actual)
+            print(f"Visitando: {actual}")
+            
+            # Agregar vecinos no visitados a la cola
+            for vecino in grafo.get(actual, []):
+                if vecino not in visitados:
+                    cola.append(vecino)
+    
+    return visitados
 

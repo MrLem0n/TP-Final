@@ -1,6 +1,3 @@
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'users')))
 from usuario import Usuario
 import mysql.connector
 # Conectar a la base de datos
