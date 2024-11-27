@@ -1,5 +1,7 @@
 from nicegui import ui
 from prueba import conexion
+from db_users import conexion
+
 
 cursor3=conexion.cursor(buffered=True)
 cursor3.execute("SELECT id FROM usuarios")
@@ -27,4 +29,6 @@ with ui.column().classes('w-full justify-center items-center h-screen bg-red-300
     ui.button("Registrarse", on_click=agregar_usuario).classes('bg-green')
 
 
+
 ui.run(native=True)
+

@@ -11,7 +11,7 @@ conexion = mysql.connector.connect(
 
 cursor = conexion.cursor()
 
-with open('util/contents.json', 'r') as archivo:
+with open('util/contents.json', 'r', encoding="utf-8") as archivo:
     datos = json.load(archivo)
 
 for item in datos:

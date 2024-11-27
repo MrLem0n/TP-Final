@@ -6,7 +6,7 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'users')))
 import login
-from pruebaHeap import mostrar_top
+from Heap import mostrar_top
 
 
 
