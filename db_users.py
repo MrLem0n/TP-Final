@@ -3,10 +3,10 @@ import mysql.connector
 # Conectar a la base de datos
 conexion = mysql.connector.connect(
     host='127.0.0.1',
-    port=3307,
+    port=3306,
     user='root',
-    password='qazWsx190820',
-    database='mi_base_de_datos'
+    password='M11f03blhjkl_',
+    database='historialtp'
 )
 
 cursor = conexion.cursor(buffered=True)
@@ -40,7 +40,7 @@ for i in range(len(diccionario['id'])):
     user = Usuario(
         id=diccionario['id'][i],
         nombre=diccionario['nombre'][i],
-        email=diccionario['email'][i],
+        email=diccionario['mail'][i],
         contraseña=diccionario['contraseña'][i],
         historial=[]
     )

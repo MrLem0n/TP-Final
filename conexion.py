@@ -4,10 +4,10 @@ import mysql.connector
 
 conexion = mysql.connector.connect(
     host='127.0.0.1',
-    port=3307,
+    port=3306,
     user='root',
-    password='qazWsx190820',
-    database='mi_base_de_datos'
+    password='M11f03blhjkl_',
+    database='historialtp'
 )
 
 cursor = conexion.cursor()
@@ -28,10 +28,10 @@ conexion.close()
 def obtener_contenido():
     conexion = mysql.connector.connect(
     host='127.0.0.1',
-    port=3307,
+    port=3306,
     user='root',
-    password='qazWsx190820',
-    database='mi_base_de_datos'
+    password='M11f03blhjkl_',
+    database='historialtp'
 )
   
 
