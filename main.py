@@ -4,8 +4,28 @@ from listado import series  # Estructura del árbol de series y capítulos
 from Contenido import contenidos
 from db_users import usuarios
 from grafo import grafo,generar_recomendaciones,dfs,bfs
+from Heap import top
+from registro import registrar
 session_usuario = None
 background_image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxtj1-R7lh9ziN4YCJsV0gMPRVdg7gie9Mg&s"
+
+@ui.page('/top')
+def top5():
+    ui.add_head_html(f'''
+    <style>
+        body {{
+            background-image: url("https://img.freepik.com/fotos-premium/top-5-texto-3d_2227-1195.jpg");
+            background-size: 50%;
+            background-attachment: fixed;
+            
+        }}
+       
+    </style>
+''')
+    top()
+@ui.page('/registro')
+def registro():
+    registrar()
 
 @ui.page('/')
 def logeando():
@@ -156,6 +176,7 @@ def recomendaciones():
                     
             else:
                 ui.label("No hay recomendaciones disponibles.").classes("text-base text-gray-600")
+
             
             
 ui.run()

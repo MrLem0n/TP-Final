@@ -42,6 +42,7 @@ def renderizar_contenido(contenidos):
                                         width: 320px;
                                         border-radius: 10px;
                                         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                                        color: blue;
                                     }
                                 </style>
                                 <a href="https://youtu.be/xvFZjo5PgG0">
@@ -52,6 +53,7 @@ def renderizar_contenido(contenidos):
                 ui.label(f"Popularidad: {contenidos.popularidad}" )
                 ui.label(f"Categorias: {contenidos.categoria}" )
 # recorrerer el arbol:
+                
 
 def simular_for(raiz):
     pila = []

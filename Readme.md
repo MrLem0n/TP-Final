@@ -175,6 +175,7 @@ def recomendaciones():
 Instalación de dependencias:
 ```bash
 pip install nicegui
+pip install mysql-connector-python
 ```
 
 ---
