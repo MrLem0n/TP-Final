@@ -6,6 +6,7 @@ from db_users import usuarios
 from grafo import grafo,generar_recomendaciones,dfs,bfs
 from Heap import top
 from registro import registrar
+from watchlist import watchlist
 session_usuario = None
 background_image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxtj1-R7lh9ziN4YCJsV0gMPRVdg7gie9Mg&s"
 
@@ -27,6 +28,9 @@ def top5():
 def registro():
     registrar()
 
+@ui.page('/watchlist')
+def pagina_wl():
+    watchlist()
 @ui.page('/')
 def logeando():
     

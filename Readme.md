@@ -57,8 +57,8 @@ class Contenido:
 Cada usuario tiene un perfil con:
 - **Nombre, edad y correo electrónico**.
 - **Historial de visualización**.
-- **Watchlist personalizada**.
-
+- **Watchlist **.
+- **Recomendaciones personalizadas**.
 #### Clase `Usuario`
 ```python
 class Usuario:
@@ -96,38 +96,13 @@ def generar_recomendaciones(contenido, grafo):
 
 ---
 
-#### 3.2 Basadas en Popularidad (Cola de Prioridades)
-- Se prioriza el contenido más popular para la watchlist del usuario.
-- Implementado mediante un **Heap Binario** usando la clase `PriorityQueue`.
-
-**Clase `PriorityQueue`:**
-```python
-class PriorityQueue:
-    def __init__(self):
-        self.heap = []
-    
-    def push(self, contenido, prioridad):
-        heapq.heappush(self.heap, (-prioridad, contenido))
-    
-    def pop(self):
-        if self.heap:
-            return heapq.heappop(self.heap)[1]
-        return None
-```
-
-**Uso:**
-```python
-watchlist_queue = PriorityQueue()
-for contenido in contenidos:
-    watchlist_queue.push(contenido, contenido.popularidad)
-```
 
 ---
 
 ### 4. **Interfaz Gráfica (NiceGUI)**
 #### Configuración de Rutas
 1. **Página de Inicio**:
-   - Muestra información básica del usuario.
+   - Muestra el login. ruta('/')
 2. **Recomendaciones**:
    - Genera recomendaciones basadas en el historial.
    - Renderiza títulos de contenido en tarjetas.
@@ -159,7 +134,7 @@ def recomendaciones():
 3. **Configurar Usuarios**:
    - Crear perfiles de usuario con historial y watchlist.
 4. **Generar Recomendaciones**:
-   - Usar el historial del usuario para sugerir contenido mediante grafos y colas.
+   - Usar el historial del usuario para sugerir contenido mediante grafos.
 5. **Renderizar Interfaz**:
    - Mostrar las recomendaciones dinámicamente con NiceGUI.
 
@@ -171,6 +146,7 @@ def recomendaciones():
   - `heapq` (estándar para el manejo de heaps).
   - `NiceGUI` para la interfaz gráfica.
   - `json` para manejo de datos.
+  - `mysql-connector-python' para Manejo de base de datos.
 
 Instalación de dependencias:
 ```bash
