@@ -17,10 +17,17 @@ El proyecto se organiza de la siguiente manera:
 
 ```
 .
+├── Arbolprueba.py          # Arbol Binario para contenido
+├── listado.py              # Arbol general para series
+├── cats.py                 # Impresion por consola de series
+├── Conexion.py             # Conexion a la base de datos para enviar los contenidos a una base de datos
 ├── Contenido.py            # Modelo de datos para el contenido
+├── db_users.py             # Genera instancias de usuarios traidos desde la base de datos
 ├── Usuario.py              # Modelo de datos para el usuario
 ├── Grafo.py                # Funciones para gestionar el grafo de similitudes
+├── Heap.py                 # Muestra el top 5 de las series mas populares
 ├── registro.py             # Funciones para el registro del usuario, enviado a la DB
+├── usuario.py              # modelo de datos para usuarios
 ├── main.py                 # Archivo principal donde se configuran las rutas y la interfaz
 ├── util/              # Archivos estáticos y estilos de NiceGUI (opcional)
 └── contents.json              # Archivo JSON con los datos del contenido
