@@ -97,8 +97,15 @@ grafo = {
 
 #### Código:
 ```python
-def generar_recomendaciones(contenido, grafo):
-    return grafo.get(contenido.nombre, [])
+def generar_recomendaciones(contenido_objeto, grafo):
+    contenido_nombre = contenido_objeto.nombre  # Extraemos el nombre para usarlo como clave del grafo
+    if contenido_nombre not in grafo:
+        return "No se encontraron recomendaciones para este contenido."
+    
+    # Generar recomendaciones basadas en los nodos conectados
+    recomendaciones = grafo[contenido_nombre]
+   
+    return recomendaciones
 ```
 
 ---
